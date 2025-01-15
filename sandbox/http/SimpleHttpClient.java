@@ -10,10 +10,8 @@ public class SimpleHttpClient {
       HttpClient client = HttpClient.newHttpClient();
 
       // Define a GET request
-      HttpRequest request = HttpRequest.newBuilder()
-        .uri(URI.create("http://localhost:8080/api/query"))
-        .GET()
-        .build();
+      HttpRequest request =
+          HttpRequest.newBuilder().uri(URI.create("http://localhost:8080/api/query")).GET().build();
 
       // Send the request and receive a response
       HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
